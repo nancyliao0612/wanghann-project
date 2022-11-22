@@ -4,8 +4,26 @@ import dotenv from "dotenv"; // loads environment variables from a .env file int
 dotenv.config();
 import connectDB from "./db/connect.js";
 
-app.get("/", (req, res) => {
-  res.send("Welcome!");
+// for deploy
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import path from "path";
+import helmet from "helmet";
+import xss from "xss-clean";
+import mongoSanitize from "express-mongo-sanitize";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+
+// make json data avaliable to us in the controller
+app.use(express.json());
+
+app.use(helmet()); // secure header
+app.use(xss());
+app.use(mongoSanitize()); // prevent MongoDB Operator Injection
+
+// direct the get route to the index.html, and react would do the job
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
 const port = process.env.PORT || 8000;
