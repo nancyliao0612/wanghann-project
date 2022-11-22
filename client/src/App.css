@@ -43,7 +43,7 @@ body {
   background: var(--color-bg);
   color: var(--color-black);
   line-height: 1.7;
-  border: solid 1px green;
+  /* border: solid 1px green; */
 }
 
 /* GENERAL STYLES */
@@ -51,7 +51,7 @@ body {
 .container {
   margin: 0 auto;
   margin-top: 8rem;
-  border: solid 1px black;
+  /* border: solid 1px black; */
 }
 
 h1,
