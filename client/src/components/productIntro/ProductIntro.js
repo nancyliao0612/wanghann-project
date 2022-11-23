@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 2.4rem;
 
-  @media screen and (min-width: 414px) {
+  @media screen and (min-width: 648px) {
     flex-direction: row;
     align-items: flex-start;
   }
@@ -32,11 +32,6 @@ const Item = styled.div`
     margin-left: 1.4rem;
   }
 
-  @media screen and (min-width: 414px) {
-    /* border: solid 1px red; */
-    width: 30%;
-  }
-
   @media screen and (min-width: 648px) {
     width: 100%;
     h2 {
@@ -52,7 +47,7 @@ const Item = styled.div`
       margin-top: 2.4rem;
     }
     img {
-      padding: 36px 24px;
+      padding: 3.6rem 1.2rem;
     }
   }
 `;
