@@ -4,12 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 // images
-import DNA_mutation from "./images/DNA_mutation.jpg";
-import t_cell from "./images/t_cell.jpg";
-import stained_tumor from "./images/stained_tumor.jpg";
 import styled from "styled-components";
 // util
-import { HighlightText } from "../../utils";
+import { tumorArray } from "./utils";
+import { useEffect, useState } from "react";
 
 const Title = styled.h2`
   color: var(--color-primary);
@@ -23,7 +21,57 @@ const TextContainer = styled.div`
   }
 `;
 
+const Description = styled.h4`
+  margin-bottom: 2.4rem;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5.6rem;
+  margin-top: 6.7rem;
+
+  div:nth-child(2) {
+    flex-direction: row-reverse;
+    img {
+      border-radius: 0 2.4rem 2.4rem 0;
+    }
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  border: solid 1px var(--color-grey);
+  background: var(--color-white);
+  border-radius: 2.4rem;
+
+  .image {
+    flex: 2;
+  }
+  img {
+    border-radius: 2.4rem 0 0 2.4rem;
+  }
+  .info {
+    flex: 3;
+    padding: 3.6rem 2.4rem;
+  }
+  h4 {
+    margin-bottom: unset;
+  }
+  h2 {
+    margin-top: unset;
+  }
+`;
+
 const OncoDNA = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth);
+    });
+  }, []);
+
   return (
     <section className="container">
       <TextContainer>
@@ -33,40 +81,55 @@ const OncoDNA = () => {
         <h4>它冷血無情，四處攻城掠地，霸佔所有資源；</h4>
         <h4>它變換多端，能因應局勢找出逃跑的路徑。</h4>
       </TextContainer>
-      <Swiper pagination={true} modules={[Pagination]}>
-        <SwiperSlide>
-          <img src={DNA_mutation} />
-          <Title>為什麼它那麼難纏?</Title>
-          <h4>
-            惡性腫瘤是一群快速增生的細胞，也因為增生太快而導致其基因組的不穩定，
-            可能產生特異的基因突變，可能是不同型態的突變，也造成某些蛋白質產生變異，也可能多種突變同時發生或是有不同的變異排列組合，因為它想透過不斷
-            的變化找出存活之路，這就造成每個人的腫瘤基因組都不盡相同。
-          </h4>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={t_cell} />
-          <Title>腫瘤城市</Title>
-          <h4>
-            腫瘤微環境(Tumor
-            Microenvironment)可以視為一個功能完善的城市，裡面有很多居民(細胞和組織)，有的負責增生(癌細胞)，有些負責運送養分物資(新生血管)，有的透過宣傳去影響隔壁城市(各式外泌性蛋白)，所以如果你要打贏這場仗，是不是要更了解這個城市(腫瘤微環境)如何運作呢?
-          </h4>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={stained_tumor} />
-          <Title>
-            <HighlightText>安可深</HighlightText>
-            透過檢測「腫瘤組織微環境」中的狀況，提供更深度的敵情分析
-          </Title>
-          <h4>
-            目前癌症治療前，需透過「組織」病理切片診斷後才能確認疾病名稱與分級，臨床醫師再根據組織病理診斷結果提供治療方案，因此組織病理也是診斷的黃金標準(Gold
-            Standard)。安可深(OncoDEEP)即是檢測組織腫瘤微環境，依照診斷的黃金標準掃描
-            <HighlightText>
-              638個基因(DNA)、20個轉錄RNA組合與不同腫瘤的特異蛋白表現組
-            </HighlightText>
-            提供更深度的敵情分析報告讓臨床醫師更了解所面對的敵手，進而提供更適切、更精準的治療方案。
-          </h4>
-        </SwiperSlide>
-      </Swiper>
+
+      {windowWidth < 648 ? (
+        <Swiper
+          pagination={{
+            el: ".custom-pagination-div",
+            clickable: true,
+            renderBullet: (index, className) => {
+              return '<span class="' + className + '">' + "</span>";
+            },
+          }}
+          modules={[Pagination]}
+        >
+          {tumorArray.map((item) => {
+            const { image, title, description } = item;
+            return (
+              <>
+                <SwiperSlide key={title}>
+                  <div className="image">
+                    <img src={image} />
+                  </div>
+                  <div>
+                    <Title>{title}</Title>
+                    <Description>{description}</Description>
+                  </div>
+                </SwiperSlide>
+              </>
+            );
+          })}
+          <div className="custom-pagination-div"></div>
+        </Swiper>
+      ) : (
+        <Wrapper>
+          {tumorArray.map((item) => {
+            const { image, title, description } = item;
+
+            return (
+              <Container key={title}>
+                <div className="image">
+                  <img src={image} />
+                </div>
+                <div className="info">
+                  <Title>{title}</Title>
+                  <Description>{description}</Description>
+                </div>
+              </Container>
+            );
+          })}
+        </Wrapper>
+      )}
     </section>
   );
 };

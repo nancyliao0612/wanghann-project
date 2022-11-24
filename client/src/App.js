@@ -13,7 +13,7 @@ import "./App.css";
 const Image = styled.div`
   background-image: url(${cancer_cells});
   width: 100%;
-  height: 500px;
+  height: 560px;
   background-size: cover;
   background-position: center;
   padding: 2.1rem 1.2rem;
@@ -30,6 +30,10 @@ const Image = styled.div`
 
   .container {
     margin-top: 0;
+  }
+
+  @media screen and (min-width: 648px) {
+    height: 750px;
   }
 `;
 

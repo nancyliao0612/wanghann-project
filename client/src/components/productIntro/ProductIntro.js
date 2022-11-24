@@ -73,14 +73,14 @@ const ProductIntro = () => {
             genomicSignatures,
           }) => {
             return (
-              <Item>
+              <Item key={product}>
                 <Title>{product}</Title>
                 <img src={image} alt="OncoDEEP" />
                 <p>{description}</p>
                 <h5>適用範圍</h5>
                 <ul style={{ paddingLeft: 15 }}>
-                  {applyRange.map((item) => (
-                    <li>{item}</li>
+                  {applyRange.map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
                 <h5>樣本來源</h5>

@@ -85,7 +85,7 @@ const Test = styled.div`
 
 const ProductFeat = () => {
   return (
-    <section class="container">
+    <section className="container">
       <h1 style={{ margin: 0 }}>產品特色</h1>
       <h2 style={{ margin: "3.6rem 0" }}>
         同步分析基因+RNA+蛋白質，提升整體治療選項獲益率
