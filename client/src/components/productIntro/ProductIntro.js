@@ -58,9 +58,8 @@ const Title = styled.h2`
 
 const ProductIntro = () => {
   return (
-    <section className="container">
+    <section className="container" id="productIntro">
       <h1>產品介紹</h1>
-
       <Wrapper>
         {productArray.map(
           ({

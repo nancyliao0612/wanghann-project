@@ -5,10 +5,15 @@ import GeneticTest from "./components/geneticTest/GeneticTest";
 import OncoDNA from "./components/oncoDNA/OncoDNA";
 import ProductFeat from "./components/productFeat/ProductFeat";
 import ProductIntro from "./components/productIntro/ProductIntro";
+import CommonQuestions from "./components/commonQuestions/CommonQuestions";
 // images
 import cancer_cells from "./components/oncoDNA/images/cancer_cells.jpg";
+import hexagon from "./components/navbar/images/hexagon.svg";
+
 // css
 import "./App.css";
+import Navbar from "./components/navbar/Navbar";
+import Header from "./components/header/Header";
 
 const Image = styled.div`
   background-image: url(${cancer_cells});
@@ -40,8 +45,10 @@ const Image = styled.div`
 function App() {
   return (
     <>
+      <img src={hexagon} alt="hexagon" className="hexagon" />
+      <Navbar />
+      <Header />
       <div className="App">
-        Wang Hann
         <ProductIntro />
         <GeneticTest />
         <Competitor />
@@ -50,6 +57,7 @@ function App() {
       <Image>
         <OncoDNA />
       </Image>
+      <CommonQuestions />
     </>
   );
 }

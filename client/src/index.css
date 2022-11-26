@@ -8,14 +8,10 @@
   text-decoration: none;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
 
 .App {
-  margin: 1rem;
+  margin: 1.2rem;
 }
