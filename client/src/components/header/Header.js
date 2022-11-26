@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { HighlightText } from "../../utils";
 import carousel_one from "./images/carousel_one.png";
 import large_carousel_one from "./images/large_carousel_one.png";
-import carousel_two from "./images/carousel_two.svg";
 
 const Carousel = styled.div`
   /* border: solid 1px green; */
