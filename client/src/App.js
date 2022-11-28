@@ -15,6 +15,7 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
 import SuccessCase from "./components/successCase/SuccessCase";
+import AboutUs from "./components/aboutUs/AboutUs";
 
 const Image = styled.div`
   background-image: url(${cancer_cells});
@@ -62,7 +63,10 @@ function App() {
         </Image>
       </div>
       <SuccessCase />
-      {/* <CommonQuestions /> */}
+      <div className="App">
+        <AboutUs />
+        <CommonQuestions />
+      </div>
     </>
   );
 }

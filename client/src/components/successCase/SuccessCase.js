@@ -13,22 +13,6 @@ const Wrapper = styled.section`
   padding: 2.8rem 1.2rem;
   background: var(--color-light-grey);
 
-  .video_container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
-  }
-
-  .video_container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
   /* .large_container {
     display: none;
   } */

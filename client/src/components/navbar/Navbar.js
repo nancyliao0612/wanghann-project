@@ -40,6 +40,7 @@ const LogoContainer = styled.div`
   #logo {
     display: block;
     height: 3rem;
+    width: 7rem;
   }
 
   .line {
