@@ -92,12 +92,13 @@ const OncoDNA = () => {
             },
           }}
           modules={[Pagination]}
+          className="oncoDNA_swiper"
         >
           {tumorArray.map((item) => {
             const { image, title, description } = item;
             return (
               <>
-                <SwiperSlide key={title}>
+                <SwiperSlide key={title} id="oncoDNA">
                   <div className="image">
                     <img src={image} />
                   </div>

@@ -14,6 +14,7 @@ import hexagon from "./components/navbar/images/hexagon.svg";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
+import SuccessCase from "./components/successCase/SuccessCase";
 
 const Image = styled.div`
   background-image: url(${cancer_cells});
@@ -24,6 +25,7 @@ const Image = styled.div`
   padding: 2.1rem 1.2rem;
   margin-top: 4rem;
   background-color: rgba(89, 39, 81, 0.5);
+  border: solid 2px green;
 
   h2 {
     margin-bottom: 1.6rem;
@@ -54,10 +56,13 @@ function App() {
         <Competitor />
         <ProductFeat />
       </div>
-      <Image>
-        <OncoDNA />
-      </Image>
-      <CommonQuestions />
+      <div className="try">
+        <Image>
+          <OncoDNA />
+        </Image>
+      </div>
+      <SuccessCase />
+      {/* <CommonQuestions /> */}
     </>
   );
 }
