@@ -53,7 +53,7 @@ body {
 /* GENERAL STYLES */
 .container {
   margin: 0 auto;
-  margin-top: 8rem;
+  margin-top: 5.6rem;
   /* border: solid 1px black; */
 }
 
@@ -222,6 +222,7 @@ h4 {
 @media screen and (min-width: 648px) {
   .container {
     max-width: var(--container-width-lg);
+    margin-top: 12rem;
   }
   h1 {
     font-size: 3.2rem;

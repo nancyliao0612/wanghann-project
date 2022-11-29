@@ -42,7 +42,7 @@ const LinkButton = styled.button`
 
 const AboutUs = () => {
   return (
-    <Wrapper>
+    <Wrapper className="container">
       <h1>關於我們</h1>
       <div className="video_container">
         <iframe src="https://www.youtube.com/embed/JAYfLZ94avA"></iframe>
