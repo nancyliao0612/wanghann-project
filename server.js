@@ -14,12 +14,17 @@ import mongoSanitize from "express-mongo-sanitize";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.resolve(__dirname, "./client/build")));
 
+// router
+import respondents from "./routes/respondents.js";
+
 // make json data avaliable to us in the controller
 app.use(express.json());
 
 app.use(helmet()); // secure header
 app.use(xss());
 app.use(mongoSanitize()); // prevent MongoDB Operator Injection
+
+app.use("/api/respondents", respondents);
 
 // direct the get route to the index.html, and react would do the job
 app.get("*", (req, res) => {
