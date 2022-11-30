@@ -42,10 +42,11 @@ const ContactUs = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onBlur",
+  });
 
   const onSubmit = async (data) => {
-    console.log("data", data);
     const { name, mobile, email } = data;
     try {
       await axios.post("/api/respondents", {
@@ -56,7 +57,6 @@ const ContactUs = () => {
     } catch (error) {
       console.log(error);
     }
-    console.log("submitted");
   };
 
   return (
@@ -94,7 +94,7 @@ const ContactUs = () => {
               pattern: {
                 value:
                   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                message: "非正確 Email 格式",
+                message: "格式錯誤",
               },
             })}
             placeholder="輸入電子郵件"
