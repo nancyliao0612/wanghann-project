@@ -8,6 +8,16 @@ const Wrapper = styled.section`
   border-radius: 0.8rem;
   box-shadow: 0px 8px 24px 0px #00000026;
   padding: 1.2rem;
+  margin-bottom: 6.4rem;
+  h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.6rem;
+  }
+
+  @media screen and (min-width: 648px) {
+    max-width: 600px;
+    margin-bottom: 12rem;
+  }
 `;
 const Field = styled.div`
   margin-top: 1.6rem;
@@ -61,7 +71,7 @@ const ContactUs = () => {
 
   return (
     <Wrapper className="container">
-      <h1>聯繫我們</h1>
+      <h2>聯繫我們</h2>
       <h4>如想了解更多癌症基因檢測服務，我們將盡快派專業人員與您聯繫</h4>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Field>
