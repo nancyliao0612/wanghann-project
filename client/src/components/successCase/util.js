@@ -1,11 +1,13 @@
 export const caseArray = [
   {
+    id: "1",
     video: "https://www.youtube.com/embed/b2zLpqrvMCw",
     title: "Alicia, 肺癌",
     description:
       "西班牙Alicia在50歲時被診斷患有非小細胞肺癌，並透過安可深發現她是屬於極少數的突變，一般常規檢測是無法發現的，隨後透過ALKinhibitor的治療2個月後恢復日常生活，繼續陪伴家人。",
   },
   {
+    id: "2",
     video: "https://www.youtube.com/embed/M7Lmum0_K1A",
     title: "Sancho, 肺癌",
     description:

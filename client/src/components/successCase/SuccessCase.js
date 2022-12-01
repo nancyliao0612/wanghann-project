@@ -68,30 +68,28 @@ const SuccessCase = () => {
           }}
           modules={[Pagination]}
         >
-          {caseArray.map((item, index) => {
-            const { video, title, description } = item;
+          {caseArray.map((item) => {
+            const { id, video, title, description } = item;
             return (
-              <>
-                <SwiperSlide key={index}>
-                  <div className="video_container">
-                    <iframe src={video}></iframe>
-                  </div>
-                  <div>
-                    <h2 style={{ margin: "1.2rem 0" }}>{title}</h2>
-                    <h4>{description}</h4>
-                  </div>
-                </SwiperSlide>
-              </>
+              <SwiperSlide key={id}>
+                <div className="video_container">
+                  <iframe src={video}></iframe>
+                </div>
+                <div>
+                  <h2 style={{ margin: "1.2rem 0" }}>{title}</h2>
+                  <h4>{description}</h4>
+                </div>
+              </SwiperSlide>
             );
           })}
           <div className="custom-pagination-div"></div>
         </Swiper>
       ) : (
         <Container>
-          {caseArray.map((item, index) => {
-            const { video, title, description } = item;
+          {caseArray.map((item) => {
+            const { id, video, title, description } = item;
             return (
-              <div id="case" key={index}>
+              <div id="case" key={id}>
                 <div className="video_container">
                   <iframe src={video}></iframe>
                 </div>

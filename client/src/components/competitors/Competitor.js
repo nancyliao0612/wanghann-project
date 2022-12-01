@@ -85,51 +85,53 @@ const Competitor = () => {
     <section className="container">
       <h1>安可深 V.S. 他牌</h1>
       <Table>
-        <tr>
-          <th></th>
-          <th>
-            <div>
-              <p>安可深</p>
-              <span>(OncoDEEP)</span>
-            </div>
-          </th>
-          <th>他牌</th>
-        </tr>
-        <tr>
-          <td>檢測樣本</td>
-          <td>腫瘤組織 </td>
-          <td>血液</td>
-        </tr>
-        <tr>
-          <td>腫瘤訊息度</td>
-          <td>
-            高<Crown />
-          </td>
-          <td>低</td>
-        </tr>
-        <tr>
-          <td>檢測基因數</td>
-          <td>
-            638
-            <Crown />
-          </td>
-          <td>5~350</td>
-        </tr>
-        <tr>
-          <td>檢測轉錄RNA</td>
-          <td>
-            20
-            <Crown />
-          </td>
-          <td>無</td>
-        </tr>
-        <tr>
-          <td>檢測特異性蛋白</td>
-          <td>
-            有<Crown />
-          </td>
-          <td>無</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th></th>
+            <th>
+              <div>
+                <p>安可深</p>
+                <span>(OncoDEEP)</span>
+              </div>
+            </th>
+            <th>他牌</th>
+          </tr>
+          <tr>
+            <td>檢測樣本</td>
+            <td>腫瘤組織 </td>
+            <td>血液</td>
+          </tr>
+          <tr>
+            <td>腫瘤訊息度</td>
+            <td>
+              高<Crown />
+            </td>
+            <td>低</td>
+          </tr>
+          <tr>
+            <td>檢測基因數</td>
+            <td>
+              638
+              <Crown />
+            </td>
+            <td>5~350</td>
+          </tr>
+          <tr>
+            <td>檢測轉錄RNA</td>
+            <td>
+              20
+              <Crown />
+            </td>
+            <td>無</td>
+          </tr>
+          <tr>
+            <td>檢測特異性蛋白</td>
+            <td>
+              有<Crown />
+            </td>
+            <td>無</td>
+          </tr>
+        </tbody>
       </Table>
       <h4>
         癌症用藥主要目的是殺死腫瘤細胞，安可深所檢測的腫瘤組織中，含有高量的腫瘤細胞，又是業界唯一檢測638個基因和RNA與蛋白質的產品，因此能對腫瘤細胞提供更全面的弱點分析。

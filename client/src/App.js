@@ -17,6 +17,7 @@ import Header from "./components/header/Header";
 import SuccessCase from "./components/successCase/SuccessCase";
 import AboutUs from "./components/aboutUs/AboutUs";
 import ContactUs from "./components/contactUs/ContactUs";
+import Footer from "./components/footer/Footer";
 
 const Image = styled.div`
   background-image: url(${cancer_cells});
@@ -68,6 +69,7 @@ function App() {
         <CommonQuestions />
         <ContactUs />
       </div>
+      <Footer />
     </>
   );
 }

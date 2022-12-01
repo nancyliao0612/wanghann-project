@@ -95,19 +95,17 @@ const OncoDNA = () => {
           className="oncoDNA_swiper"
         >
           {tumorArray.map((item) => {
-            const { image, title, description } = item;
+            const { id, image, title, description } = item;
             return (
-              <>
-                <SwiperSlide key={title} id="oncoDNA">
-                  <div className="image">
-                    <img src={image} />
-                  </div>
-                  <div>
-                    <Title>{title}</Title>
-                    <Description>{description}</Description>
-                  </div>
-                </SwiperSlide>
-              </>
+              <SwiperSlide key={id} id="oncoDNA">
+                <div className="image">
+                  <img src={image} />
+                </div>
+                <div>
+                  <Title>{title}</Title>
+                  <Description>{description}</Description>
+                </div>
+              </SwiperSlide>
             );
           })}
           <div className="custom-pagination-div"></div>
@@ -115,10 +113,10 @@ const OncoDNA = () => {
       ) : (
         <Wrapper>
           {tumorArray.map((item) => {
-            const { image, title, description } = item;
+            const { id, image, title, description } = item;
 
             return (
-              <Container key={title}>
+              <Container key={id}>
                 <div className="image">
                   <img src={image} />
                 </div>
