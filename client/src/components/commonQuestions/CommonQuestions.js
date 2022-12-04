@@ -19,6 +19,7 @@ const Wrapper = styled.div`
   border-radius: 0.8rem;
   padding: 1.2rem;
   border: solid 1px var(--color-grey);
+  background-color: var(--color-white);
 
   h3 {
     border: solid 1px var(--color-bright);

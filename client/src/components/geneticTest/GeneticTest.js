@@ -4,12 +4,14 @@ import more from "./images/more.svg";
 import comprehensive from "./images/comprehensive.svg";
 import leading from "./images/leading.svg";
 import styled from "styled-components";
+import grey_polygon from "./images/grey_polygon.png";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  margin: 1.2rem;
 
   @media screen and (min-width: 414px) {
     .up_container,
@@ -68,9 +70,31 @@ const IconContainer = styled.div`
   }
 `;
 
+const GeneticTestWrapper = styled.div`
+  position: relative;
+
+  .polygon {
+    position: absolute;
+    width: auto;
+    height: 52.7rem;
+    left: 0;
+    top: 10rem;
+
+    @media screen and (min-width: 648px) {
+      display: none;
+    }
+  }
+
+  h1 {
+    margin-right: 1.2rem;
+    margin-left: 1.2rem;
+  }
+`;
+
 const GeneticTest = () => {
   return (
-    <section className="container">
+    <GeneticTestWrapper className="container">
+      <img src={grey_polygon} alt="grey polygon" className="polygon" />
       <h1>新一代癌症用藥基因檢測</h1>
       <Wrapper>
         <div className="up_container">
@@ -98,7 +122,7 @@ const GeneticTest = () => {
           </IconContainer>
         </div>
       </Wrapper>
-    </section>
+    </GeneticTestWrapper>
   );
 };
 

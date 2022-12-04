@@ -13,9 +13,9 @@ import ContactUs from "./components/contactUs/ContactUs";
 // images
 import cancer_cells from "./components/oncoDNA/images/cancer_cells.jpg";
 import hexagon from "./components/navbar/images/hexagon.svg";
+
 // css
 import "./App.css";
-import { Route } from "react-router-dom";
 
 const Image = styled.div`
   background-image: url(${cancer_cells});
@@ -44,15 +44,18 @@ const Image = styled.div`
   }
 `;
 
+const Wrapper = styled.div`
+  overflow: hidden;
+`;
+
 function Home() {
   return (
-    <>
+    <Wrapper>
       <img src={hexagon} alt="hexagon" className="hexagon" />
       <Header />
+      <ProductIntro />
+      <GeneticTest />
       <div className="App">
-        {/* <Route path="productIntro" element={<ProductIntro />} /> */}
-        <ProductIntro />
-        <GeneticTest />
         <Competitor />
         <ProductFeat />
       </div>
@@ -62,12 +65,12 @@ function Home() {
         </Image>
       </div>
       <SuccessCase />
+      <AboutUs />
       <div className="App">
-        <AboutUs />
         <CommonQuestions />
         <ContactUs />
       </div>
-    </>
+    </Wrapper>
   );
 }
 
