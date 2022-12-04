@@ -39,6 +39,7 @@ const Wrapper = styled.section`
       left: -690px;
       width: auto;
       height: 1225px;
+      z-index: -1;
     }
 
     .content {

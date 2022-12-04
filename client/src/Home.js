@@ -13,7 +13,6 @@ import ContactUs from "./components/contactUs/ContactUs";
 // images
 import cancer_cells from "./components/oncoDNA/images/cancer_cells.jpg";
 import hexagon from "./components/navbar/images/hexagon.svg";
-
 // css
 import "./App.css";
 

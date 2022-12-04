@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { HighlightText } from "../../utils";
 import axios from "axios";
+import Dialog from "./Dialog";
 
 const Wrapper = styled.section`
   border: solid 1px var(--color-grey);
@@ -9,6 +11,7 @@ const Wrapper = styled.section`
   box-shadow: 0px 8px 24px 0px #00000026;
   padding: 1.2rem;
   margin-bottom: 6.4rem;
+  position: relative;
   h2 {
     color: var(--color-primary);
     margin-bottom: 1.6rem;
@@ -48,6 +51,8 @@ const Button = styled.button`
 `;
 
 const ContactUs = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -64,6 +69,7 @@ const ContactUs = () => {
         mobile,
         email,
       });
+      setOpenDialog((prevState) => !prevState);
     } catch (error) {
       console.log(error);
     }
@@ -113,6 +119,7 @@ const ContactUs = () => {
         </Field>
         <Button type="submit">獲取更多資訊</Button>
       </form>
+      {openDialog && <Dialog />}
     </Wrapper>
   );
 };
