@@ -1,23 +1,21 @@
 import styled from "styled-components";
-import "./App.css";
+// components
 import Competitor from "./components/competitors/Competitor";
 import GeneticTest from "./components/geneticTest/GeneticTest";
 import OncoDNA from "./components/oncoDNA/OncoDNA";
 import ProductFeat from "./components/productFeat/ProductFeat";
 import ProductIntro from "./components/productIntro/ProductIntro";
 import CommonQuestions from "./components/commonQuestions/CommonQuestions";
-// images
-import cancer_cells from "./components/oncoDNA/images/cancer_cells.jpg";
-import hexagon from "./components/navbar/images/hexagon.svg";
-
-// css
-import "./App.css";
-import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
 import SuccessCase from "./components/successCase/SuccessCase";
 import AboutUs from "./components/aboutUs/AboutUs";
 import ContactUs from "./components/contactUs/ContactUs";
-import Footer from "./components/footer/Footer";
+// images
+import cancer_cells from "./components/oncoDNA/images/cancer_cells.jpg";
+import hexagon from "./components/navbar/images/hexagon.svg";
+// css
+import "./App.css";
+import { Route } from "react-router-dom";
 
 const Image = styled.div`
   background-image: url(${cancer_cells});
@@ -46,13 +44,13 @@ const Image = styled.div`
   }
 `;
 
-function App() {
+function Home() {
   return (
     <>
       <img src={hexagon} alt="hexagon" className="hexagon" />
-      <Navbar />
       <Header />
       <div className="App">
+        {/* <Route path="productIntro" element={<ProductIntro />} /> */}
         <ProductIntro />
         <GeneticTest />
         <Competitor />
@@ -69,9 +67,8 @@ function App() {
         <CommonQuestions />
         <ContactUs />
       </div>
-      <Footer />
     </>
   );
 }
 
-export default App;
+export default Home;

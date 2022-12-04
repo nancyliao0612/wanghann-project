@@ -9,6 +9,9 @@ import { IoMdClose } from "react-icons/io";
 // util
 import { menuArray } from "./utils";
 import { useState } from "react";
+// react reouter dom
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const NavWrapper = styled.nav`
   background-color: var(--color-white);
@@ -84,6 +87,7 @@ const MenuList = styled.div`
   background-color: var(--color-white);
   opacity: 0.8;
   position: fixed;
+  z-index: 999;
   width: 100%;
   height: 15.6rem;
   padding: 1.2rem 0;
@@ -94,6 +98,7 @@ const MenuList = styled.div`
     justify-content: center;
     gap: 0.7rem;
     padding: 1.2rem;
+    cursor: pointer;
   }
 `;
 
@@ -102,7 +107,7 @@ const Navbar = () => {
   const [menuItemId, setMenuItemId] = useState(0);
 
   const handleClick = () => {
-    setOpenMenu(!openMenu);
+    setOpenMenu((prevState) => !prevState);
   };
 
   return (
@@ -117,9 +122,9 @@ const Navbar = () => {
             <img src={oncoDNA} alt="OncoDNA Logo" />
           </a>
           <div className="line"></div>
-          <a href="" id="logo">
+          <Link to="/" id="logo">
             <img src={wangHann} alt="WangHann Logo" />
-          </a>
+          </Link>
         </LogoContainer>
 
         {/* screen < 648px */}
@@ -131,9 +136,9 @@ const Navbar = () => {
         <MenuContainer>
           {menuArray.map(({ title, link }) => {
             return (
-              <a href={link} key={title}>
+              <HashLink to={link} key={title}>
                 {title}
-              </a>
+              </HashLink>
             );
           })}
         </MenuContainer>
@@ -142,13 +147,14 @@ const Navbar = () => {
         <MenuList>
           {menuArray.map(({ id, title, link }) => {
             return (
-              <a
-                href={link}
+              <HashLink
+                to={link}
                 key={title}
                 onClick={() => {
-                  setOpenMenu(false);
                   setMenuItemId(id);
+                  setOpenMenu(false);
                 }}
+                style={{ zIndex: 99 }}
               >
                 <p>
                   <PointArrow
@@ -158,7 +164,7 @@ const Navbar = () => {
                   />
                   {title}
                 </p>
-              </a>
+              </HashLink>
             );
           })}
         </MenuList>

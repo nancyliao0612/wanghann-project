@@ -70,7 +70,7 @@ const ContactUs = () => {
   };
 
   return (
-    <Wrapper className="container">
+    <Wrapper className="container" id="contactUs">
       <h2>聯繫我們</h2>
       <h4>如想了解更多癌症基因檢測服務，我們將盡快派專業人員與您聯繫</h4>
       <form onSubmit={handleSubmit(onSubmit)}>

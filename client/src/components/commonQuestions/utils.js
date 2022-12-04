@@ -1,4 +1,4 @@
-const getAnswers = () => {
+export const getAnswers = () => {
   return (
     <ul style={{ marginLeft: 25 }}>
       <li>第一次使用標靶藥物治療前</li>
