@@ -89,7 +89,10 @@ const AboutUs = () => {
       <div className="content">
         <h1>關於我們</h1>
         <div className="video_container">
-          <iframe src="https://www.youtube.com/embed/JAYfLZ94avA"></iframe>
+          <iframe
+            src="https://www.youtube.com/embed/JAYfLZ94avA"
+            title="An introduction to OncoDNA Group (corporate video 2022)"
+          ></iframe>
         </div>
         <div className="paper_link">
           <LinkButton>

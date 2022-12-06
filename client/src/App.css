@@ -39,9 +39,9 @@ html {
   display: none;
 }
 
-/* #root {
-  position: relative;
-} */
+#root {
+  overflow: hidden;
+}
 
 body {
   font-family: "Noto Sans TC", sans-serif;
@@ -161,7 +161,6 @@ h4 {
 /* NAV */
 .hexagon {
   position: absolute;
-  position: absolute;
   left: -212px;
   top: -300px;
   z-index: -1;
@@ -218,7 +217,9 @@ h4 {
 }
 
 .gray_polygon_lg,
-.blue_cell_lg {
+.blue_cell_lg,
+.grey_polygon_lg_2,
+.grey_polygon_lg_3 {
   display: none;
 }
 
@@ -279,10 +280,12 @@ h4 {
   }
 
   .hexagon {
-    left: -410px;
-    top: -500px;
-    width: 820px;
+    left: -600px;
+    top: -700px;
+    width: auto;
+    position: relative;
     height: 820px;
+    display: unset;
   }
 
   .try {
@@ -302,6 +305,25 @@ h4 {
     left: -860px;
     top: -400px;
     z-index: -99;
+  }
+
+  .grey_polygon_lg_2 {
+    display: unset;
+    position: relative;
+    width: auto;
+    height: 903px;
+    top: 1530px;
+    left: -850px;
+    z-index: 99;
+  }
+
+  .grey_polygon_lg_3 {
+    display: unset;
+    position: relative;
+    width: auto;
+    height: 903px;
+    right: -830px;
+    top: 920px;
   }
 
   .blue_cell_lg {

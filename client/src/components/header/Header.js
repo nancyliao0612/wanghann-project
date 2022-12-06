@@ -2,10 +2,12 @@ import styled from "styled-components";
 import { HighlightText } from "../../utils";
 import carousel_one from "./images/carousel_one.png";
 import large_carousel_one from "./images/large_carousel_one.png";
+import hexagon from "../navbar/images/hexagon.svg";
 
 const Carousel = styled.div`
   /* border: solid 1px green; */
   height: 500px;
+  /* overflow: hidden; */
 
   .dissolve {
   }
@@ -26,13 +28,14 @@ const Carousel = styled.div`
     object-fit: none;
 
     @media screen and (min-width: 648px) {
-      left: 8%;
-      top: -50px;
+      left: 0;
+      top: 850px;
+      width: auto;
     }
   }
 
   @media screen and (min-width: 648px) {
-    height: 800px;
+    height: 950px;
   }
 `;
 
@@ -58,7 +61,7 @@ const Text = styled.div`
 `;
 
 const Wrapper = styled.section`
-  overflow: hidden;
+  /* overflow: hidden; */
 
   .large {
     display: none;
@@ -69,13 +72,21 @@ const Wrapper = styled.section`
     }
     .large {
       display: inherit;
+      position: relative;
+      top: -1020px;
+      left: 40px;
+    }
+    .title {
+      margin: 0 1.2rem;
+      margin-top: -138rem;
     }
   }
 `;
 
 const Header = () => {
   return (
-    <Wrapper>
+    <Wrapper className="container">
+      <img src={hexagon} alt="hexagon" className="hexagon" />
       <Carousel className="small carousel dissolve">
         <div className="small items">
           <img className="small item" src={carousel_one} alt="" />
@@ -96,7 +107,7 @@ const Header = () => {
         /> */}
         </div>
       </Carousel>
-      <div style={{ margin: "0 1.2rem" }}>
+      <div className="title">
         <Text>
           <h1>
             OncoDNA

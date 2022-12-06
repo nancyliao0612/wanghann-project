@@ -44,6 +44,7 @@ const Container = styled.div`
   border: solid 1px var(--color-grey);
   background: var(--color-white);
   border-radius: 2.4rem;
+  z-index: 1;
 
   .image {
     flex: 2;

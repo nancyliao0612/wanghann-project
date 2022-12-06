@@ -49,27 +49,30 @@ const Wrapper = styled.div`
 
 function Home() {
   return (
-    <Wrapper>
-      <img src={hexagon} alt="hexagon" className="hexagon" />
+    <>
+      {/* <img src={hexagon} alt="hexagon" className="hexagon" /> */}
       <Header />
-      <ProductIntro />
-      <GeneticTest />
-      <div className="App">
-        <Competitor />
+      <Wrapper>
+        {/* <Header /> */}
+        <ProductIntro />
+        <GeneticTest />
+        <div className="App">
+          <Competitor />
+        </div>
         <ProductFeat />
-      </div>
-      <div className="try">
-        <Image>
-          <OncoDNA />
-        </Image>
-      </div>
-      <SuccessCase />
-      <AboutUs />
-      <div className="App">
-        <CommonQuestions />
-        <ContactUs />
-      </div>
-    </Wrapper>
+        <div className="try">
+          <Image>
+            <OncoDNA />
+          </Image>
+        </div>
+        <SuccessCase />
+        <AboutUs />
+        <div className="App">
+          <CommonQuestions />
+          <ContactUs />
+        </div>
+      </Wrapper>
+    </>
   );
 }
 
