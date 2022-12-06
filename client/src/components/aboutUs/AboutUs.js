@@ -94,12 +94,16 @@ const AboutUs = () => {
             title="An introduction to OncoDNA Group (corporate video 2022)"
           ></iframe>
         </div>
-        <div className="paper_link">
+        <a
+          className="paper_link"
+          href="https://www.oncodna.com/en/company/library/publications/"
+          target="_blank"
+        >
           <LinkButton>
             <h3>發表論文連結</h3>
             <VscLinkExternal />
           </LinkButton>
-        </div>
+        </a>
       </div>
     </Wrapper>
   );

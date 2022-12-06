@@ -9,7 +9,7 @@ import polygon from "./images/polygon.png";
 
 const Container = styled.div`
   margin: 1.2rem;
-  margin-top: 35rem;
+  margin-top: 25rem;
   margin-bottom: 5rem;
   padding: 1.2rem;
   border: solid 1px var(--color-grey);
@@ -102,8 +102,8 @@ const Image = styled.div`
 
 const Heading = styled.h1`
   color: var(--color-bg);
-  position: fixed;
-  top: 280px;
+  position: relative;
+  top: 180px;
   left: 12px;
   @media screen and (min-width: 648px) {
     position: relative;

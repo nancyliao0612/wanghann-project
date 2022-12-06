@@ -4,6 +4,7 @@ import { HighlightText } from "../../utils";
 import { BiChevronUp } from "react-icons/bi";
 import styled from "styled-components";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.section`
   @media screen and (min-width: 648px) {
@@ -77,6 +78,7 @@ const Card = styled.div`
 const CommonQuestions = () => {
   const [openInfo, setOpenInfo] = useState(true);
   const [questionId, setQuestionId] = useState(0);
+  const navigate = useNavigate();
 
   const handleClick = (id) => {
     setOpenInfo(!openInfo);
@@ -107,7 +109,7 @@ const CommonQuestions = () => {
             </Card>
           );
         })}
-        <h3>閱讀更多</h3>
+        <h3 onClick={() => navigate("/FAQ")}>閱讀更多</h3>
       </Wrapper>
     </Container>
   );

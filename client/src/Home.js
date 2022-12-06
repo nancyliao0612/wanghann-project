@@ -44,7 +44,7 @@ const Image = styled.div`
 `;
 
 const Wrapper = styled.div`
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 function Home() {
