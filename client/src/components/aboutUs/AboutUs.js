@@ -56,6 +56,7 @@ const LinkButton = styled.button`
   background: var(--color-bg);
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   h3 {
     width: 12rem;

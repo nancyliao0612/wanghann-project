@@ -36,11 +36,15 @@ const Wrapper = styled.div`
     @media screen and (min-width: 648px) {
       font-size: 1.8rem;
       padding: 10px 12px;
+      margin-top: 2.4rem;
     }
   }
 
   @media screen and (min-width: 648px) {
     max-width: 600px;
+    width: 100%;
+    z-index: 99;
+    padding: 2.4rem;
   }
 `;
 
@@ -76,39 +80,41 @@ const Card = styled.div`
 `;
 
 const CommonQuestions = () => {
-  const [openInfo, setOpenInfo] = useState(true);
-  const [questionId, setQuestionId] = useState(0);
+  const [data, setData] = useState(quesitonsArray);
   const navigate = useNavigate();
 
   const handleClick = (id) => {
-    setOpenInfo(!openInfo);
-    setQuestionId(id);
+    console.log("click");
+    setData((prevState) => {
+      return prevState.map((question) => {
+        return question.id === id
+          ? { ...question, isOpen: !question.isOpen }
+          : question;
+      });
+    });
   };
+
+  const newData = data.map((datum) => {
+    const { id, question, answer, isOpen } = datum;
+    return (
+      <Card key={id}>
+        <h2>
+          <HighlightText>{question}</HighlightText>
+          <BiChevronUp
+            onClick={() => handleClick(id)}
+            className={!isOpen && "rotate"}
+          />
+        </h2>
+        {isOpen && <h4 onClick={() => console.log("hi")}>{answer}</h4>}
+      </Card>
+    );
+  });
 
   return (
     <Container id="commonQuestions" className="container">
       <h1>常見問題</h1>
       <Wrapper>
-        {quesitonsArray.map(({ id, question, answer }) => {
-          return (
-            <Card key={id}>
-              <h2>
-                <HighlightText>{question}</HighlightText>
-                <BiChevronUp
-                  onClick={() => handleClick(id)}
-                  className={!openInfo && "rotate"}
-                />
-              </h2>
-              <h4
-                style={{
-                  display: questionId === id && !openInfo ? "none" : null,
-                }}
-              >
-                {answer}
-              </h4>
-            </Card>
-          );
-        })}
+        {newData}
         <h3 onClick={() => navigate("/FAQ")}>閱讀更多</h3>
       </Wrapper>
     </Container>

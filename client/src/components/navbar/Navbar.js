@@ -14,8 +14,10 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const NavWrapper = styled.nav`
-  background-color: var(--color-white);
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  width: 100%;
+  z-index: 999;
   /* border: solid 1px; */
   padding: 0.8rem 1.2rem;
   padding-right: 1.6rem;
@@ -84,9 +86,10 @@ const MenuContainer = styled.div`
 `;
 
 const MenuList = styled.div`
-  background-color: var(--color-white);
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.8);
   position: fixed;
+  left: 0;
+  top: 46px;
   z-index: 999;
   width: 100%;
   height: 15.6rem;
@@ -131,6 +134,32 @@ const Navbar = () => {
         <IconContainer onClick={handleClick} className="icon">
           {openMenu ? <IoMdClose /> : <IoMdMenu />}
         </IconContainer>
+        {openMenu && (
+          <MenuList>
+            {menuArray.map(({ id, title, link }) => {
+              return (
+                <HashLink
+                  to={link}
+                  key={title}
+                  onClick={() => {
+                    setMenuItemId(id);
+                    setOpenMenu(false);
+                  }}
+                  style={{ zIndex: 99 }}
+                >
+                  <p>
+                    <PointArrow
+                      style={{
+                        visibility: id === menuItemId ? "visible" : "hidden",
+                      }}
+                    />
+                    {title}
+                  </p>
+                </HashLink>
+              );
+            })}
+          </MenuList>
+        )}
 
         {/* screen > 648px */}
         <MenuContainer>
@@ -143,7 +172,7 @@ const Navbar = () => {
           })}
         </MenuContainer>
       </NavWrapper>
-      {openMenu && (
+      {/* {openMenu && (
         <MenuList>
           {menuArray.map(({ id, title, link }) => {
             return (
@@ -168,7 +197,7 @@ const Navbar = () => {
             );
           })}
         </MenuList>
-      )}
+      )} */}
     </>
   );
 };
