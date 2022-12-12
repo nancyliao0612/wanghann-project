@@ -95,7 +95,13 @@ const ContactUs = () => {
             聯絡電話 <HighlightText>*</HighlightText>
           </h4>
           <input
-            {...register("mobile", { required: "必填" })}
+            {...register("mobile", {
+              required: "必填",
+              pattern: {
+                value: /^[0-9]*$/,
+                message: "格式錯誤",
+              },
+            })}
             placeholder="輸入聯絡電話"
           />
           <HighlightText>{errors.mobile?.message}</HighlightText>

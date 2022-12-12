@@ -1,6 +1,6 @@
 import styled from "styled-components";
 // images
-import logo_oncoDNA_white from "./images/logo_oncoDNA_white.svg";
+import logo_oncoDNA_white from "./images/logo_oncoDNA_white.png";
 import logo_wangHann_white from "./images/logo_wangHann_white.svg";
 
 const Wrapper = styled.section`
@@ -12,7 +12,7 @@ const Wrapper = styled.section`
 
   h5 {
     color: var(--color-bg);
-    font-weight: 400;
+    font-weight: 300;
     span {
       text-decoration: underline;
     }
@@ -27,6 +27,9 @@ const Wrapper = styled.section`
     img {
       width: 10.1rem;
     }
+    h5 {
+      font-size: 1.4rem;
+    }
   }
 `;
 
@@ -36,7 +39,7 @@ const LogoContainer = styled.div`
   gap: 0.8rem;
 
   .line {
-    width: 1px;
+    width: 0.5px;
     height: 1.6rem;
     background: var(--color-bg);
   }
