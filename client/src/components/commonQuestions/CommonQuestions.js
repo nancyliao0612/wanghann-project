@@ -84,7 +84,6 @@ const CommonQuestions = () => {
   const navigate = useNavigate();
 
   const handleClick = (id) => {
-    console.log("click");
     setData((prevState) => {
       return prevState.map((question) => {
         return question.id === id

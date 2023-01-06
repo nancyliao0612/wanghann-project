@@ -128,9 +128,14 @@ const FAQ = () => {
   const toggleAll = () => {
     setQuestionData((prevState) => {
       return prevState.map((question) => {
-        return { ...question, open: !question.open };
+        if (openAll) {
+          return { ...question, open: false };
+        } else {
+          return { ...question, open: true };
+        }
       });
     });
+
     setOpenAll((prevState) => !prevState);
   };
 
