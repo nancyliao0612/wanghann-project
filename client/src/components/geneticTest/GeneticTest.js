@@ -1,10 +1,10 @@
 // images
-import precise from "./images/precise.svg";
-import more from "./images/more.svg";
+import { BiTargetLock, BiDna } from "react-icons/bi";
 import comprehensive from "./images/comprehensive.svg";
 import leading from "./images/leading.svg";
 import styled from "styled-components";
 import grey_polygon from "./images/grey_polygon.png";
+import orange_polygon from "./images/orange_polygon.png";
 
 const Wrapper = styled.div`
   display: flex;
@@ -40,10 +40,26 @@ const IconContainer = styled.div`
 
   &.left {
     transform: translateX(-48px);
+    .icon svg {
+      width: 45px;
+      height: 45px;
+    }
   }
   &.right {
     transform: translateX(48px);
     margin-top: 12px;
+  }
+  .icon {
+    position: relative;
+    svg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      color: var(--color-bright);
+      width: 40px;
+      height: 40px;
+      transform: translate(-50%, -50%);
+    }
   }
 
   img {
@@ -58,6 +74,10 @@ const IconContainer = styled.div`
     &.left {
       transform: none;
       margin-bottom: 56px;
+      svg {
+        width: 45px;
+        height: 45px;
+      }
     }
     &.right {
       transform: none;
@@ -99,12 +119,18 @@ const GeneticTest = () => {
       <Wrapper>
         <div className="up_container">
           <IconContainer className="left">
-            <img src={precise} alt="precise icon" />
+            <div className="icon">
+              <img src={orange_polygon} alt="orange_polygon" />
+              <BiTargetLock />
+            </div>
             <h2>更準</h2>
             <h3>主攻腫瘤微環境解析</h3>
           </IconContainer>
           <IconContainer className="right">
-            <img src={more} alt="more icon" />
+            <div className="icon">
+              <img src={orange_polygon} alt="orange_polygon" />
+              <BiDna />
+            </div>
             <h2>更多</h2>
             <h3>業界最多638個基因檢測</h3>
           </IconContainer>
