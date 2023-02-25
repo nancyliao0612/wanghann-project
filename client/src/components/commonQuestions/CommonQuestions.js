@@ -50,7 +50,13 @@ const Wrapper = styled.div`
 
 const Card = styled.div`
   border-bottom: solid 1px var(--color-grey);
-  background: var(--color-light-grey);
+  background: ${(props) => (props.isOpen ? "#f5f5f5" : "white")};
+
+  p {
+    color: ${(props) => (props.isOpen ? "#ff7355" : "#0f4b70")};
+    font-size: 1.6rem;
+  }
+
   h2 {
     display: flex;
     align-items: center;
@@ -59,7 +65,7 @@ const Card = styled.div`
   }
   svg {
     cursor: pointer;
-    color: var(--color-bright);
+    color: ${(props) => (props.isOpen ? "#ff7355" : "#0f4b70")};
     width: 2.4rem;
     height: 2.4rem;
   }
@@ -72,6 +78,9 @@ const Card = styled.div`
     color: var(--color-primary);
   }
   @media screen and (min-width: 648px) {
+    p {
+      font-size: 1.8rem;
+    }
     li {
       font-size: 1.6rem;
       line-height: 2.8rem;
@@ -96,9 +105,9 @@ const CommonQuestions = () => {
   const newData = data.map((datum) => {
     const { id, question, answer, isOpen } = datum;
     return (
-      <Card key={id}>
+      <Card key={id} isOpen={isOpen}>
         <h2>
-          <HighlightText>{question}</HighlightText>
+          <p>{question}</p>
           <BiChevronUp
             onClick={() => handleClick(id)}
             className={!isOpen && "rotate"}

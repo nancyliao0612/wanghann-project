@@ -24,6 +24,7 @@ const Container = styled.div`
   }
 
   .expand {
+    cursor: pointer;
     padding: 1.2rem;
     text-align: right;
     border-bottom: solid 1px var(--color-grey);
@@ -43,6 +44,7 @@ const Container = styled.div`
       padding: 1.2rem;
     }
     svg {
+      cursor: pointer;
       font-size: 1.8rem;
     }
     .highlight {
