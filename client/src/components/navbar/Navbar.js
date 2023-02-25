@@ -172,32 +172,6 @@ const Navbar = () => {
           })}
         </MenuContainer>
       </NavWrapper>
-      {/* {openMenu && (
-        <MenuList>
-          {menuArray.map(({ id, title, link }) => {
-            return (
-              <HashLink
-                to={link}
-                key={title}
-                onClick={() => {
-                  setMenuItemId(id);
-                  setOpenMenu(false);
-                }}
-                style={{ zIndex: 99 }}
-              >
-                <p>
-                  <PointArrow
-                    style={{
-                      visibility: id === menuItemId ? "visible" : "hidden",
-                    }}
-                  />
-                  {title}
-                </p>
-              </HashLink>
-            );
-          })}
-        </MenuList>
-      )} */}
     </>
   );
 };
