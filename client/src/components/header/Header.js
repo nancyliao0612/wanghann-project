@@ -112,7 +112,7 @@ const Wrapper = styled.section`
       display: inherit;
       position: relative;
       top: -1080px;
-      left: -10px;
+      left: 5px;
     }
     .title {
       margin: 0 1.2rem;

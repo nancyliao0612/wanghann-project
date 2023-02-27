@@ -16,7 +16,7 @@ const Table = styled.table`
     position: absolute;
     right: 2.4rem;
     width: 1.2rem;
-    height: 1.2rem;
+    height: 2.1rem;
   }
 
   div {
@@ -75,7 +75,7 @@ const Table = styled.table`
       position: absolute;
       right: 5.6rem;
       width: 2.4rem;
-      height: 2.4rem;
+      height: 3.5rem;
     }
   }
 `;
