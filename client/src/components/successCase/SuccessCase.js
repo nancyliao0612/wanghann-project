@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 const Wrapper = styled.section`
   margin: 0 auto;
-  padding: 2.8rem 1.2rem;
+  padding: 2.8rem 2.4rem;
   background: var(--color-light-grey);
 
   /* .large_container {
