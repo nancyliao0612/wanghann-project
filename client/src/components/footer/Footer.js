@@ -70,7 +70,7 @@ const Footer = () => {
         <br />
         臺北市松山區民生東路3段113巷7弄10號1樓
         <br />
-        電話: 0912435687
+        電話: 0932842828
       </h5>
       <TextContainer>
         <h5>
@@ -78,8 +78,8 @@ const Footer = () => {
           ｜隱私聲明 <span>Privacy Policy</span>
         </h5>
         <h5>
-          Copyright © 2022 Wanghann Precision Medicine Limited. All rights
-          reserved
+          Copyright © {new Date().getFullYear()} Wanghann Precision Medicine
+          Limited. All rights reserved
         </h5>
       </TextContainer>
     </Wrapper>
