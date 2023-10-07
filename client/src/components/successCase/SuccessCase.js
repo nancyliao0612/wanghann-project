@@ -10,22 +10,12 @@ import { useEffect, useState } from "react";
 
 const Wrapper = styled.section`
   margin: 0 auto;
-  padding: 2.8rem 2.4rem;
+  padding: 2.8rem 1.2rem;
   background: var(--color-light-grey);
-
-  /* .large_container {
-    display: none;
-  } */
 
   @media screen and (min-width: 648px) {
     padding: 4.1rem 1.2rem;
 
-    /* .large_container {
-      display: unset;
-    }
-    .swiper_container {
-      display: none;
-    } */
     h1 {
       margin: 0 auto;
       max-width: var(--container-width-lg);
