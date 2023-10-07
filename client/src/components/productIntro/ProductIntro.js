@@ -1,23 +1,45 @@
 import { productArray } from "./utils";
 import styled from "styled-components";
 // image
-import gray_polygon_sm from "./images/gray_polygon_sm.svg";
-import gray_polygon_lg from "./images/gray_polygon_lg.svg";
+import grey_polygon_sm from "./images/grey_polygon_sm.svg";
+import grey_polygon_lg from "./images/grey_polygon_lg.svg";
 import blue_cell_sm from "./images/blue_cell_sm.png";
 import blue_cell_lg from "./images/blue_cell_lg.png";
+
+const ProductIntroWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 2.4rem;
+  margin: 1.2rem;
+  @media screen and (min-width: 648px) {
+    margin: 0 auto;
+    margin-top: -195rem;
+    align-items: start;
+  }
+`;
+
+const H1 = styled.h1`
+  margin-bottom: 0;
+
+  @media screen and (max-width: 648px) {
+    margin-top: 4.8rem;
+  }
+`;
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   gap: 2.4rem;
-  margin: 1.2rem;
 
   @media screen and (min-width: 648px) {
     flex-direction: row;
     align-items: flex-start;
-    margin-top: -2030px;
+    margin: 1.2rem;
   }
 `;
 
@@ -64,40 +86,24 @@ const Title = styled.h2`
   color: var(--color-primary);
 `;
 
-// const GrayPolygon = styled.div`
-//   background-image: url(${gray_polygon_sm});
-//   position: absolute;
-//   width: auto;
-//   height: 467px;
-//   left: -340px;
-//   top: 430px;
-//   z-index: -99;
-// `;
-
 const ProductIntro = () => {
   return (
     <>
-      {/* <GrayPolygon></GrayPolygon> */}
       <img
-        src={gray_polygon_sm}
-        alt="gray_polygon_sm"
-        className="gray_polygon_sm"
+        src={grey_polygon_sm}
+        alt="grey_polygon_sm"
+        className="grey_polygon_sm"
       />
       <img src={blue_cell_sm} alt="blue_cell_sm" className="blue_cell_sm" />
-      <section className="container" id="productIntro">
-        <h1 style={{ marginLeft: 12, marginRight: 12 }}>產品介紹</h1>
+
+      <ProductIntroWrapper className="container">
         <img
-          src={gray_polygon_lg}
-          alt="gray_polygon_lg"
-          className="gray_polygon_lg"
+          src={grey_polygon_lg}
+          alt="grey_polygon_lg"
+          className="grey_polygon_lg"
         />
         <img src={blue_cell_lg} alt="blue_cell_lg" className="blue_cell_lg" />
-
-        {/* 
-        <div>
-          <h1>產品介紹</h1>
-          <img src={gray_polygon_sm} alt="" />
-        </div> */}
+        <H1 style={{ marginLeft: 12, marginRight: 12 }}>產品介紹</H1>
         <Wrapper>
           {productArray.map(
             ({
@@ -131,7 +137,7 @@ const ProductIntro = () => {
             }
           )}
         </Wrapper>
-      </section>
+      </ProductIntroWrapper>
     </>
   );
 };
