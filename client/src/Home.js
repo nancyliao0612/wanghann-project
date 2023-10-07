@@ -12,7 +12,6 @@ import AboutUs from "./components/aboutUs/AboutUs";
 import ContactUs from "./components/contactUs/ContactUs";
 // images
 import cancer_cells from "./components/oncoDNA/images/cancer_cells.jpg";
-import hexagon from "./components/navbar/images/hexagon.svg";
 // css
 import "./App.css";
 
@@ -22,8 +21,7 @@ const Image = styled.div`
   height: 560px;
   background-size: cover;
   background-position: center;
-  padding: 2.1rem 1.2rem;
-  margin-top: 4rem;
+  padding: 2.1rem 2.4rem;
   background-color: rgba(89, 39, 81, 0.5);
 
   h2 {
@@ -39,41 +37,32 @@ const Image = styled.div`
   }
 
   @media screen and (min-width: 648px) {
-    height: 750px;
+    height: 100vh;
   }
-`;
-
-const Wrapper = styled.div`
-  /* overflow: hidden; */
 `;
 
 function Home() {
   return (
     <>
-      {/* <img src={hexagon} alt="hexagon" className="hexagon" /> */}
       <Header />
-      <Wrapper>
-        {/* <Header /> */}
-        <ProductIntro />
-        <GeneticTest />
-        <div className="App">
-          <Competitor />
-        </div>
-        <ProductFeat />
-        <div className="try">
-          <Image>
-            <OncoDNA />
-          </Image>
-        </div>
-        <SuccessCase />
-        <AboutUs />
-        <div className="App">
-          <CommonQuestions />
-          <ContactUs />
-        </div>
-      </Wrapper>
+      <ProductIntro />
+      <GeneticTest />
+      <div className="App">
+        <Competitor />
+      </div>
+      <ProductFeat />
+      <div className="cell_image">
+        <Image>
+          <OncoDNA />
+        </Image>
+      </div>
+      <SuccessCase />
+      <AboutUs />
+      <div className="App">
+        <CommonQuestions />
+        <ContactUs />
+      </div>
     </>
   );
 }
-
 export default Home;
