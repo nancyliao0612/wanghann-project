@@ -4,6 +4,11 @@ import styled from "styled-components";
 import { HighlightText } from "../../utils";
 import axios from "axios";
 import Dialog from "./Dialog";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = "service_uabp35e";
+const TEMPLATE_ID = "template_7b8u6ul";
+const PUBLIC_KEY = "Wz7iqsRwGDhOrIFKa";
 
 const Wrapper = styled.section`
   border: solid 1px var(--color-grey);
@@ -70,6 +75,26 @@ const ContactUs = () => {
         email,
       });
       setOpenDialog((prevState) => !prevState);
+
+      emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          to_name: "Scott",
+          auto_reply_email: email,
+          client_name: name,
+          client_mobile: mobile,
+          client_email: email,
+          cc_myself: "nancyliao.engineer@gmail.com",
+          pdf_file:
+            "/client/build/static/file/OncoDEEP RNA - Brochure - 2023.pdf",
+        },
+        PUBLIC_KEY
+      );
+
+      setTimeout(() => {
+        setOpenDialog((prevState) => false);
+      }, 3000);
     } catch (error) {
       console.log(error);
     }
