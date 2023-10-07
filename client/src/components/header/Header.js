@@ -20,7 +20,7 @@ const dissolve = keyframes`
 const Carousel = styled.div`
   /* border: solid 1px green; */
   height: 515px;
-  /* overflow: hidden; */
+  z-index: -1;
 
   .dissolve {
     position: relative;
@@ -112,7 +112,7 @@ const Wrapper = styled.section`
       display: inherit;
       position: relative;
       top: -1080px;
-      left: 5px;
+      left: 8px;
     }
     .title {
       margin: 0 1.2rem;
