@@ -96,7 +96,7 @@ const ProductIntro = () => {
       />
       <img src={blue_cell_sm} alt="blue_cell_sm" className="blue_cell_sm" />
 
-      <ProductIntroWrapper className="container">
+      <ProductIntroWrapper className="container" id="productIntro">
         <img
           src={grey_polygon_lg}
           alt="grey_polygon_lg"
