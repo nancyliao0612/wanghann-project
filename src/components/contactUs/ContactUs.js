@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { HighlightText } from "../../utils";
-import axios from "axios";
 import Dialog from "./Dialog";
 import emailjs from "@emailjs/browser";
 
@@ -69,11 +68,6 @@ const ContactUs = () => {
   const onSubmit = async (data) => {
     const { name, mobile, email } = data;
     try {
-      await axios.post("/api/respondents", {
-        name,
-        mobile,
-        email,
-      });
       setOpenDialog((prevState) => !prevState);
 
       emailjs.send(
